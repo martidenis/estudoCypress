@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-describe('Should test at a functional level', () => {
+describe('PORTAL DE VENDAS - GERAÇÃO DE PROPOSTA + CONSULTA', () => {
   before(() => {
     // cy.clearCookies()
   })
@@ -9,7 +9,7 @@ describe('Should test at a functional level', () => {
   })
 
   
-  it('Gerar Proposta e consulta da proposta gerada para o produto Auto', () => {
+  it('Gerar Proposta para o produto Auto e realizar consulta da proposta gerada', () => {
 
     // Login AUTO
     cy.loginAcessoAuto('#login','#senha')
@@ -44,15 +44,11 @@ describe('Should test at a functional level', () => {
     //Avançar para a próxima aba
     cy.get('.btnProximo').click()
 
-
-
     //Aba Seguro
 
     //Clicar no botão Próximo
     cy.get('.btnProximo').click()
 
-
-    
     //Aba Automóvel
 
     //Preencher o campo Chassi
@@ -71,7 +67,6 @@ describe('Should test at a functional level', () => {
 
     //Avançar para a próxima aba
     cy.get('.btnProximo').click()
-
 
 
     //Aba Perfil
@@ -134,7 +129,6 @@ describe('Should test at a functional level', () => {
 
     //Avançar para a próxima aba
     cy.get('.btnProximo').click()
-
 
       
       //Aba cobertura

@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
-describe('Should test at a functional level', () => {
+describe('PORTAL DE VENDAS (CAPITALIZAÇÃO) - CONSULTA POR CPF', () => {
     before(() => {
-      // cy.clearCookies()
+      cy.clearCookies()
     })
   
     beforeEach(() => {

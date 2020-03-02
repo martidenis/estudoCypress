@@ -20,17 +20,6 @@ describe('PROJETO HIGH USERS - CONSULTA SEGURADO', () => {
 
     })
     
-
-    //it('Menu Administrativo - Selecione a Opção Empresa', () => {
-
-    //    cy.get(':nth-child(3) > .dropdown-toggle').click()
-    //    cy.get('.open > .dropdown-menu > :nth-child(2) > a').click()
-
-        // Clica em pesquisar
-    //    cy.get('.padding-top-50px > .bradseg-btn').click()
-    //})
-
-
     it('Consulta CPNJ já Cadastrado no Sistema', () => {
         cy.get('#cnpj').type('07.825.425/0001-89')
 
@@ -97,5 +86,3 @@ describe('PROJETO HIGH USERS - CONSULTA SEGURADO', () => {
         cy.get('tbody > tr > :nth-child(6)').should('contain','INATIVO')
     })
 })
-
-

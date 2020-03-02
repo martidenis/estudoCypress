@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-describe('Should test at a functional level', () => {
+describe('PORTAL DE VENDAS (DENTAL) - GERAÇÃO DE PROPOSTA + CONSULTA', () => {
   before(() => {
     cy.clearCookies()
   })
@@ -8,7 +8,7 @@ describe('Should test at a functional level', () => {
 
   })
 
-  it('Login com sucesso', () => {
+  it('Gerar Proposta para o produto Dental e realizar consulta por CPF', () => {
       cy.homeDental().then(() => {
           cy.visit('http://wsphttp.dsv.bradseg.com.br/CVCR-VendaDental/seguro/dental/atendimento/novoAtendimento.do')
   })
