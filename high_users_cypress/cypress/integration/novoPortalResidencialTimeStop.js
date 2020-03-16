@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-describe('Should test at a functional level', () => {
+describe('PORTAL DE VENDAS (RESIDENCIAL) - GERAÇÃO DE PROPOSTA + CONSULTA (TIME STOP)', () => {
     before(() => {
       // cy.clearCookies()
     })
@@ -8,7 +8,7 @@ describe('Should test at a functional level', () => {
 
     })
 
-    it('Login com sucesso', () => {
+    it('Gerar Proposta para o produto Residencial e realizar consulta por CPF (Time Stop)', () => {
         cy.homeResidencial().then(() => {
             cy.visit('http://wsphttp.dsv.bradseg.com.br/CVCR-BilheteResidencial/seguro/residencial/atendimento.do')
     })
@@ -142,6 +142,3 @@ describe('Should test at a functional level', () => {
     })
 
   })
-
-
-

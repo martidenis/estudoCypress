@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 describe('Should test at a functional level', () => {
     before(() => {
-      // cy.clearCookies()
+      cy.clearCookies()
     })
   
     beforeEach(() => {
@@ -28,10 +28,12 @@ describe('Should test at a functional level', () => {
   
       // Clicar na busca
       cy.get('#buscarResponsavelFinanceiro').click()
+      cy.wait(10000)
   
       // Clicar na conta
       cy.get('#conta0 > :nth-child(1) > input').click()
-  
+      cy.wait(10000)
+
       // Clicar no proximo
       cy.get('.btnProximo').click()
   
@@ -44,6 +46,8 @@ describe('Should test at a functional level', () => {
       //cy.wait(5000)
       //Buscar CPF
       cy.get('#buscaTitular').click()
+      cy.wait(10000)
+
       //Nome Ttiular
       cy.get('#nomeTitular').type('JEREMIASS SILVA')
   
@@ -55,7 +59,7 @@ describe('Should test at a functional level', () => {
   
       //Nascimento
       cy.get('#dataNascimentoTitular').type('30/11/1988')
-  
+      cy.wait(10000)
   
       //Estado civil
       cy.get('#estadoCivilTitular').select('3')
@@ -108,14 +112,12 @@ describe('Should test at a functional level', () => {
   
       //it('VALIDAÇÃO MENSAGEM SUCESSO', () => {
       cy.get('#titulo-modal').should('contain', 'Portal de Vendas - Efetivação realizada com sucesso.')
-      cy.wait(4000)
+      cy.wait(10000)
   
   
       cy.get('#mensagens-modal > :nth-child(3) > :nth-child(1)').then(($text) => {
         const txt = $text.text().substr(10, 16)
         console.log('Variável txt: ' + txt)
-      
-  
   
       cy.get('#mensagens-modal > .pull-right > .btn-primary-green').click()
   

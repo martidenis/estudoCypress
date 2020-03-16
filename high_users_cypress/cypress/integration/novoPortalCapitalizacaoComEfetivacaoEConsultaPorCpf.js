@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-describe('Should test at a functional level', () => {
+describe('PORTAL DE VENDAS (CAPITALIZAÇÃO) - GERAÇÃO DE PROPOSTA + CONSULTA', () => {
   before(() => {
     // cy.clearCookies()
   })
@@ -9,7 +9,7 @@ describe('Should test at a functional level', () => {
   })
 
 
-  it('Efetivação Com Efetivação Consulta por CPF', () => {
+  it('Gerar Proposta para o produto Captalização e realizar consulta por CPF', () => {
 
     // Login AUTO
     cy.loginAcessoCapi('#login','#senha')
@@ -48,7 +48,9 @@ describe('Should test at a functional level', () => {
     cy.get('#cmbProdutos').select('4').should('have.value', '4')
 
     //Selecionar o DIA DO DEBITO
-    cy.get('#datepicker').type('07/03/2020').click()
+    //cy.get('#datepicker').type('07/03/2020').click()
+
+    cy.dataAgendamentoPlano('#datepicker')
 
 
     //Clicar no botao PROXIMO
@@ -108,5 +110,3 @@ describe('Should test at a functional level', () => {
   })
 
 })
-
-

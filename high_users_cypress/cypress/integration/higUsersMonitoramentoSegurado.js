@@ -9,6 +9,9 @@ describe('Teste do Monitoramento Segurado', () => {
         cy.get(':nth-child(4) > .dropdown-toggle').click()
         cy.get('.open > .dropdown-menu > :nth-child(3) > a').click()
 
+        //Seleção do tipo de pesquisa
+        cy.get('#tipo-de-pesquisa').select('1')
+
         // Seleção da empresa
         cy.get('#empresa').select('CAMBOINHAS (Apólice: 11111 / Cia: 244)')
 
@@ -24,7 +27,7 @@ describe('Teste do Monitoramento Segurado', () => {
         cy.get('.unstyle > :nth-child(1) > strong').should('have.text', 'CAMBOINHAS')
 
         // Verificar se a data e a empresa pesquisadas retornaram na consulta corretamente
-        cy.get('svg > :nth-child(3) > text').should('have.text', 'Empresa: CAMBOINHAS- Período: 01/12/2019 - 31/12/2019')
+        cy.get('svg > :nth-child(3) > text').should('have.text', 'Empresa: CAMBOINHAS - Período de Monitoramento: 01/12/2019 - 31/12/2019')
 
         // Verificar se o link que permite o download do relatório está presente na tela
         cy.get('.text-right > a > span').should('have.text', 'Exportar para XLS')

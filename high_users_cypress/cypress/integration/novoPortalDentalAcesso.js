@@ -14,8 +14,6 @@ describe('PORTAL DE VENDAS (DENTAL) - GERAÇÃO DE PROPOSTA + CONSULTA', () => {
       cy.visit('http://wsphttp.dsv.bradseg.com.br/CVCR-VendaDental/seguro/dental/atendimento/novoAtendimento.do')
     })
 
-    
-
     // RESPONSAVEL FINANCEIRO
     // Combo Perfil Atendimento
     cy.get('#tipoPerfilAtendimento').select('2')
