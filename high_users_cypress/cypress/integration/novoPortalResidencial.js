@@ -115,15 +115,148 @@ describe('PORTAL DE VENDAS (RESIDENCIAL) - GERAÇÃO DE PROPOSTA + CONSULTA', ()
  
       // Captura o numero da proposta antes da "/"
       cy.get('tbody > :nth-child(1) > :nth-child(2)').then(($text)=>{
-        const consultaProposta = $text.text().substr(0,7)
-        console.log('valor da consultar ' + consultaProposta)
+        const propostaGerada = $text.text().substr(0,7)
+        console.log('valor da consultar ' + propostaGerada)
      
 
       // Valida o numero da proposta gerada com o resultado da consulta
-      if(numero == consultaProposta){
+      if(numero == propostaGerada){
         console.log('valor numero' + numero)
         //cy.get(':nth-child(1) > .actions > .pull-left > .menu-invisible > a > .icon-nav-busca').click()
-         
+        
+        cy.get('.icon-seta-dupla-direita-b').click()
+
+      cy.get('.active > .page-link').then(($text) => {
+
+        const pagina = $text.text().substr(0, 7)
+
+        console.log('numero da pagina: ' + pagina)
+
+        console.log(pagina)
+
+        cy.get('.icon-seta-dupla-b').click()
+
+
+
+        for (let i = 1; i <= pagina; i++) {
+
+          var proposta
+
+          cy.get('tbody > :nth-child(1) > :nth-child(2)').then(($text) => {
+            const proposta = $text.text().substr(0, 7)
+            console.log('numero da proposta: ' + proposta)
+
+            if (proposta !== null) {
+
+              if (proposta == propostaGerada) {
+
+                console.log('Proposta' + proposta + 'é igual a ' + propostaGerada)
+
+                console.log('Proposta encontrada')
+
+                //cy.pause().end()
+
+                expect(true).to.equal(true)
+
+              } else {
+
+                console.log('Proposta' + proposta + 'é diferente a ' + propostaGerada)
+
+                cy.get('tbody > :nth-child(3) > :nth-child(2)').then(($text) => {
+
+                  const proposta = $text.text().substr(0, 7)
+
+                  console.log('numero da proposta: ' + proposta)
+
+                  if (proposta == propostaGerada) {
+
+                    console.log('Proposta' + proposta + 'é igual a ' + propostaGerada)
+
+                    console.log('Proposta encontrada')
+
+                    expect(true).to.equal(true)
+
+                  } else {
+
+                    console.log('Proposta' + proposta + 'é diferente a ' + propostaGerada)
+
+                    cy.get('tbody > :nth-child(5) > :nth-child(2)').then(($text) => {
+
+                      const proposta = $text.text().substr(0, 7)
+
+                      console.log('numero da proposta: ' + proposta)
+
+                      if (proposta == propostaGerada) {
+
+                        console.log('Proposta' + proposta + 'é igual a ' + propostaGerada)
+
+                        console.log('Proposta encontrada')
+
+                        expect(true).to.equal(true)
+
+                      } else {
+
+                        console.log('Proposta' + proposta + 'é diferente a ' + propostaGerada)
+
+                        if (cy.get('tbody > :nth-child(7) > :nth-child(2)') !== null) {
+
+                          cy.get('tbody > :nth-child(7) > :nth-child(2)').then(($text) => {
+
+                            const proposta = $text.text().substr(0, 7)
+
+                            console.log('numero da proposta: ' + proposta)
+
+                            if (proposta == propostaGerada) {
+
+                              console.log('Proposta' + proposta + 'é igual a ' + propostaGerada)
+
+                              console.log('Proposta encontrada')
+
+                              expect(true).to.equal(true)
+
+                            } else {
+
+                              console.log('Proposta' + proposta + 'é diferente a ' + propostaGerada)
+
+                              if (cy.get('tbody > :nth-child(9) > :nth-child(2)') !== null) {
+
+                                cy.get('tbody > :nth-child(9) > :nth-child(2)').then(($text) => {
+
+                                  const proposta = $text.text().substr(0, 7)
+
+                                  console.log('numero da proposta: ' + proposta)
+
+                                  if (proposta == propostaGerada) {
+
+                                    console.log('Proposta' + proposta + 'é igual a ' + propostaGerada)
+
+                                    console.log('Proposta encontrada')
+
+                                    expect(true).to.equal(true)
+
+                                  } else {
+
+                                    console.log('Proposta' + proposta + 'é diferente a ' + propostaGerada)
+
+                                    cy.get('.icon-seta-direita-b').click()
+
+                                  }
+                                })
+                              }
+                            }
+                          })
+                        }
+                      }
+                    })
+                  }
+                })
+              }
+              console.log(i)
+            }
+          })
+        }
+      })
+  
       }
     })  
 
