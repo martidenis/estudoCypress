@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-describe('Should test at a functional level', () => {
+describe('PORTAL DE VENDAS (RESIDENCIAL) - GERAÇÃO DE PROPOSTA + CONSULTA', () => {
     before(() => {
       // cy.clearCookies()
     })
